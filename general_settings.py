@@ -14,22 +14,22 @@
 
 """
 SOFTWARE_MODE = 1               # 0 - последовательный запуск / 1 - параллельный запуск
-ACCOUNTS_IN_STREAM = 10         # Количество аккаунтов в потоке при SOFTWARE_MODE = 1
+ACCOUNTS_IN_STREAM = 50         # Количество аккаунтов в потоке при SOFTWARE_MODE = 1
 WALLETS_TO_WORK = 0             # 0 / 3 / 3, 20 / [3, 20]
 BREAK_ROUTE = False             # Прекращает выполнение маршрута, если произойдет ошибка
-SHUFFLE_WALLETS = False         # Перемешивает кошельки перед запуском
-SAVE_PROGRESS = False           # Включает сохранение прогресса аккаунта для Classic-routes
+SHUFFLE_WALLETS = True         # Перемешивает кошельки перед запуском
+SAVE_PROGRESS = True           # Включает сохранение прогресса аккаунта для Classic-routes
 TELEGRAM_NOTIFICATIONS = False  # Включает уведомления в Telegram
 WAIT_FAUCET = False             # Ожидает получение $BERA из Faucet
 
 '------------------------------------------------SLEEP CONTROL---------------------------------------------------------'
-SLEEP_MODE = False               # Включает сон после каждого модуля и аккаунта
-SLEEP_TIME_MODULES = (30, 60)    # (минимум, максимум) секунд | Время сна между модулями.
-SLEEP_TIME_ACCOUNTS = (60, 120)  # (минимум, максимум) секунд | Время сна между аккаунтами.
+SLEEP_MODE = True               # Включает сон после каждого модуля и аккаунта
+SLEEP_TIME_MODULES = (10, 20)    # (минимум, максимум) секунд | Время сна между модулями.
+SLEEP_TIME_ACCOUNTS = (5, 10)  # (минимум, максимум) секунд | Время сна между аккаунтами.
 
 '------------------------------------------------RETRY CONTROL---------------------------------------------------------'
 MAXIMUM_RETRY = 20               # Количество повторений при ошибках
-SLEEP_TIME_RETRY = (5, 10)       # (минимум, максимум) секунд | Время сна после очередного повторения
+SLEEP_TIME_RETRY = (2, 5)       # (минимум, максимум) секунд | Время сна после очередного повторения
 
 '------------------------------------------------PROXY CONTROL---------------------------------------------------------'
 MOBILE_PROXY = False             # Включает использование мобильных прокси.
@@ -41,7 +41,7 @@ MOBILE_PROXY_URL_CHANGER = [
 
 '------------------------------------------------SECURE DATA-----------------------------------------------------------'
 # https://2captcha.com/enterpage
-TWO_CAPTCHA_API_KEY = ""
+TWO_CAPTCHA_API_KEY = "afedca0f0efd54714c7fe29c647c469a"
 
 # EXCEL AND GOOGLE INFO
 EXCEL_PASSWORD = False
@@ -93,16 +93,16 @@ TG_ID = ""  # https://t.me/getmyid_bot
     ]
 """
 CLASSIC_ROUTES_MODULES_USING = [
-    ['mint_berachain_tokens'],
+    # ['mint_berachain_tokens'],
+    ['swap_btc_bex'],
+    ['swap_eth_bex'],
     ['swap_stgusdc_bex'],
-    ['swap_eth_bex', 'swap_btc_bex'],
-    ['add_liqiudity_bex_bera_usdc'],
     ['mint_honey'],
-    ['mint_booga_ticket', None],
+    ['deposit_honey_berps'],
     ['supply_honey_bend', 'supply_btc_bend', 'supply_eth_bend'],
-    ['claim_galxe_points'],
-    ['claim_bgt_on_berps'],
-    ['delegate_bgt_on_station'],
-    ['vote_bgt_on_station'],
-    ['claim_galxe_campaign_points'],
+    ['add_liqiudity_bex_honey_mim', 'add_liqiudity_bex_bera_usdc'],
+    
+    
+
+    
 ]

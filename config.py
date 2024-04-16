@@ -81,7 +81,7 @@ HONEY_CONTRACTS = {
     'router'                 : "0x09ec711b81cD27A6466EC40960F2f8D85BB129D9"
 }
 
-HELP_SOFTWARE = True  # True or False | True = You support me 1% amount of transactions on aggregator`s
+HELP_SOFTWARE = False  # True or False | True = You support me 1% amount of transactions on aggregator`s
 
 CHAIN_NAME = {
     1: 'BeraChain',
